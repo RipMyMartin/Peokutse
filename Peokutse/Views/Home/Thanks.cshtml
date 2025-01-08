@@ -1,0 +1,26 @@
+﻿@model Peokutse.Models.Guest
+
+@{
+    ViewBag.Title = "Thanks";
+}
+
+<div>
+    <p> Tänan sind, @Model.Name </p>
+</div>
+<div>
+    @if (Model.WillAttend == true)
+    {
+        @: Ootan sind kallis sõber!
+        <p>
+            <img src="~/Images/star.png"/>
+        </p>
+    }
+    else
+    {
+        @: Väga kurb uudis. Näeme hiljem!
+        <p>
+            <img src="~/Images/star.png" />
+        </p>
+    }
+    @ViewBag.Message @*VievBag.Message - отчет об отправке письма с приглошением*@
+</div>
