@@ -11,7 +11,7 @@ namespace Peokutse.Models
         [Required(ErrorMessage = "Sisestage nimi!")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Sisestage email!")]
-        [RegularExpression(@".+\.+\..+", ErrorMessage = "Valesti sisestatud email!")]
+        [RegularExpression(@".+\@.+\..+", ErrorMessage = "Valesti sisestatud email!")]
 
         public string Email { get; set; }
         [Required(ErrorMessage = "Sisestage telefoni number!")]
