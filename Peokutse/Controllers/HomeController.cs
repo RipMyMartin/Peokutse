@@ -1,7 +1,6 @@
 ﻿using Peokutse.Models;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Helpers;
@@ -21,6 +20,12 @@ namespace Peokutse.Controllers
         [HttpGet]
         public ViewResult Ankeet()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult Ankeet(Guest guest)
+        {
             E_Mail(guest);
             if (ModelState.IsValid)
             {
@@ -38,13 +43,12 @@ namespace Peokutse.Controllers
                 WebMail.SmtpServer = "smtp.gmail.com";
                 WebMail.SmtpPort = 587;
                 WebMail.EnableSsl = true;
-                WebMail.UserName = "ripmyloven@gmail.com";
-                WebMail.Password = "*****";
-                WebMail.From = "ripmyloven@gmail.com";
-                WebMail.Send("ripmyloven@gmail.com", "Vastus kutsele", guest.Name + " Vastus" + ((guest.WillAttend ?? false) ?
+                WebMail.UserName = "martinsild.mr@gmail.com";
+                WebMail.Password = "sycq lcfr dzyu hodg";
+                WebMail.From = "martinsild.mr@gmail.com";
+                WebMail.Send("martinsild.mr@gmail.com", "Vastus kutsele", guest.Name + " Vastus " + ((guest.WillAttend ?? false) ?
                     "tuleb poele " : "ei tule poele"));
                 ViewBag.Message = "Kiri on saatnud!";
-
             }
             catch (Exception ex)
             {
