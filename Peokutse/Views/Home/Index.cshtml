@@ -2,15 +2,67 @@
     ViewBag.Title = "Tere tulemast pelole!";
 }
 
-<div class="jumbotron">
-    <h1>@ViewBag.Greeting , Kallis sõber!</h1>
+<div class="jumbotron text-center">
+    <h2 class="display-4">@ViewBag.Greeting , Kallis sõber!</h2>
+    <p class="lead">Tere tulemast meie lehele. Loodame, et naudid siin olemist!</p>
 </div>
 
-<div>
-    @ViewBag.Message
-    <img src="~/Images/star.png" alt="Smail Icon" />
+<div class="container text-center my-4">
+    <p>@ViewBag.Message</p>
+    <img src="@Url.Content(ViewBag.ImagePath)" alt="Smiley Icon" class="img-fluid rounded-circle shadow" />
 </div>
 
-<div>
-    @Html.ActionLink("Vastan", "Ankeet", "Ankeet", new { @class = "btn btn-primary" })
+<div class="text-center my-4">
+    @Html.ActionLink("Vastan", "Ankeet", "Ankeet", new { @class = "btn btn-success btn-lg shadow-lg" })
 </div>
+
+<style>
+    body {
+        background-color: #f0f8ff;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .jumbotron {
+        background-color: #007bff;
+        color: white;
+        border-radius: 20px;
+        padding: 30px;
+    }
+
+    .display-4 {
+        font-size: 3rem;
+    }
+
+    .lead {
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    img {
+        width: 50%;
+        margin-top: 20px;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+    }
+
+        .btn:hover {
+            background-color: #28a745;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+</style>

@@ -147,7 +147,14 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\autumn.png" />
+    <Content Include="Images\christmas-tree.png" />
+    <Content Include="Images\flowers.png" />
+    <Content Include="Images\happy-new-year.png" />
+    <Content Include="Images\happy.png" />
+    <Content Include="Images\sad.png" />
     <Content Include="Images\star.png" />
+    <Content Include="Images\summer.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />

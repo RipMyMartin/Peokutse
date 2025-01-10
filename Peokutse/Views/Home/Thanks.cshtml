@@ -12,15 +12,26 @@
     {
         @: Ootan sind kallis sõber!
         <p>
-            <img src="~/Images/star.png"/>
+            <img src="~/Images/happy.png" />
         </p>
     }
     else
     {
         @: Väga kurb uudis. Näeme hiljem!
         <p>
-            <img src="~/Images/star.png" />
+            <img src="~/Images/sad.png" />
         </p>
     }
     @ViewBag.Message @*VievBag.Message - отчет об отправке письма с приглошением*@
+
+    @if (Model.WillAttend == true)
+    {
+        if (Model.WillAttend.HasValue && Model.WillAttend.Value)
+        {
+            <form method="post" action="@Url.Action("Thanks")">
+                <input type="hidden" name="sendReminder" value="true" />
+                <button type="submit">Saada meeldetuletus</button>
+            </form>
+        }
+    }
 </div>
