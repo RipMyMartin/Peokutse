@@ -26,9 +26,12 @@
 
     @if (Model.WillAttend == true)
     {
-            <form method="post" action="@Url.Action("Thanks")">
+        if (Model.WillAttend.HasValue && Model.WillAttend.Value)
+        {
+            <form method="post" action="@Url.Action("Ankeet")">
                 <input type="hidden" name="sendReminder" value="true" />
                 <button type="submit">Saada meeldetuletus</button>
             </form>
+        }
     }
 </div>
